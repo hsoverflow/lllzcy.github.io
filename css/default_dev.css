@@ -29,6 +29,18 @@ body, html {
 	height: 100%;
 }
 
+#limg {
+	position: absolute;
+	top: 210px;
+	left: 140px;
+	height: 200px;
+}
+
+#limg img {
+	border-radius: 30px;
+	width: 100px;
+}
+
 #garden {
 	width: 100%;
 	height: 100%;
