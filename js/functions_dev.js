@@ -88,7 +88,7 @@ function startHeartAnimation() {
 
 function showMessages() {
 	adjustWordsPosition();
-	$('#messages').fadeIn(5000, function() {
+	$('#limg').fadeIn(2000, function() {
 		showLoveU();
 	});
 }
