@@ -1,3 +1,29 @@
+
+(function($) {
+	$.fn.typewriter = function(cb) {
+		this.each(function() {
+			var $ele = $(this), str = $ele.html(), progress = 0;
+			$ele.html('');
+			var timer = setInterval(function() {
+				var current = str.substr(progress, 1);
+				if (current == '<') {
+					progress = str.indexOf('>', progress) + 1;
+				} else {
+					progress++;
+				}
+				$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
+				if (progress >= str.length) {
+					clearInterval(timer);
+					if (cb) {
+						setTimeout(cb, 0)
+					}
+				}
+			}, 75);
+		});
+		return this;
+	};
+})(jQuery);
+
 // variables
 var $window = $(window), gardenCtx, gardenCanvas, $garden, garden;
 var clientWidth = $(window).width();
@@ -16,24 +42,13 @@ $(function () {
     gardenCtx.globalCompositeOperation = "lighter";
     garden = new Garden(gardenCtx, gardenCanvas);
 	
-	// $("#content").css("width", $loveHeart.width() + $("#code").width());
-	// $("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
-	// $("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
-	// $("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
 
-    // renderLoop
     setInterval(function () {
         garden.render();
     }, Garden.options.growSpeed);
 });
 
-// $(window).resize(function() {
-//     var newWidth = $(window).width();
-//     var newHeight = $(window).height();
-//     if (newWidth != clientWidth && newHeight != clientHeight) {
-//         location.replace(location);
-//     }
-// });
+
 
 function getHeartPoint(angle) {
 	var t = angle / Math.PI;

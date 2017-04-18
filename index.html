@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<title>Any way love you</title>
+	<title>사랑해요</title>
 	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width">
 	<style type="text/css">
 		@font-face {
@@ -17,25 +17,49 @@
     <script type="text/javascript" src="js/functions_dev.js"></script> 
 </head>
 <body>
-	<div id="mainDiv">
-		<div id="content">
-			<div id="loveHeart">
-				<canvas id="garden"></canvas>
-				<div id="words">
-					<div id="messages">
-						lll, 사랑해요
-						<div id="elapseClock"></div>
-					</div>
-					<div id="loveu">
-						Love u forever and ever.<br/>
-						<div class="signature">- zcy</div>
-					</div>
-					
-				</div>
-				<div id="limg">
-					<img src="./img/l1.JPG" alt="">
-				</div>
+	<div id="loveHeart">
+		<div id="typer">
+			<p class="birth">亲爱的，生日快乐!</p>
+			<p class="birth">亲爱的，永远爱你!</p>
+		</div>
+		<canvas id="garden"></canvas>
+		<div id="words">
+			<div id="messages">
+				lll, 사랑해요
+				<div id="elapseClock"></div>
 			</div>
+			<div id="loveu">
+				Love u forever and ever.<br/>
+				<div class="signature">- zcy</div>
+			</div>
+			
+		</div>
+		<div id="limg">
+			<img src="./img/l1.JPG" alt="">
+		</div>
+		<div id="typer1">
+			<p class="birth">
+				亲爱的，这是我陪你的第一个生日 以后再也不要缺席你任何的生日
+			</p>
+			<p>
+				期望与你走过以后的所以日子
+			</p>
+			<p>
+				陪你去你想去地方 做你想做的事情
+			</p>
+			<p>
+				历经生命中的点滴 走过人生的每一个路牌
+			</p>
+			<p>
+				人虽愚笨 爱你挚诚
+			</p>
+			<p>
+				你不离 我不弃 好好的
+			</p>
+			<p>
+				-- ZCY
+			</p>
+			
 		</div>
 	</div>
 	<script type="text/javascript">
@@ -48,9 +72,14 @@
 		together.setSeconds(0);
 		together.setMilliseconds(0);
 		
-			setTimeout(function () {
-				startHeartAnimation();
-			}, 0);
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 0);
+
+		$("#typer").typewriter(function (){
+			$("#typer1").show()
+			$("#typer1").typewriter()
+		});
 			
 	</script>
 </body>
